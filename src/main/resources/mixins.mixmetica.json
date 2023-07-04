@@ -1,11 +1,9 @@
 {
-  "package": "${mixinGroup}",
+  "package": "com.github.microcontrollersdev.mixmetica.mixin",
   "refmap": "mixins.${modid}.refmap.json",
   "minVersion": "0.7",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-	"MixinGuiMainMenu"
+    "CapeUtilsMixin"
   ]
 }

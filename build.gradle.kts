@@ -33,10 +33,8 @@ loom {
     }
     forge {
         pack200Provider.set(dev.architectury.pack200.java.Pack200Adapter())
-        // If you don't want mixins, remove this lines
         mixinConfig("mixins.$modid.json")
     }
-    // If you don't want mixins, remove these lines
     mixin {
         defaultRefmapName.set("mixins.$modid.refmap.json")
     }
@@ -51,7 +49,6 @@ sourceSets.main {
 repositories {
     mavenCentral()
     maven("https://repo.spongepowered.org/maven/")
-    // If you don't want to log in with your real minecraft account, remove this line
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
@@ -64,14 +61,14 @@ dependencies {
     mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
     forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
 
-    // If you don't want mixins, remove these lines
     shadowImpl("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         isTransitive = false
     }
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")
 
-    // If you don't want to log in with your real minecraft account, remove this line
     runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.1.2")
+
+    modImplementation(files("libs/preview_OptiFine_1.8.9_HD_U_M6_pre2.jar"))
 
 }
 
@@ -87,7 +84,6 @@ tasks.withType(Jar::class) {
         this["FMLCorePluginContainsFMLMod"] = "true"
         this["ForceLoadAsMod"] = "true"
 
-        // If you don't want mixins, remove these lines
         this["TweakClass"] = "org.spongepowered.asm.launch.MixinTweaker"
         this["MixinConfigs"] = "mixins.$modid.json"
     }
