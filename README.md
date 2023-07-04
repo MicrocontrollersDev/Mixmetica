@@ -11,4 +11,4 @@ Currently only supports capes. Animated capes do not work.
 
 ### Development
 
-If you want to contribute, make sure to add M6-pre2 to the libs folder when setting up a dev environment.
+If you want to contribute, make sure to add OptiFine M6-pre2 to the libs folder when setting up a dev environment.
