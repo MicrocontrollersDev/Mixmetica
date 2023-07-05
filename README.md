@@ -7,7 +7,7 @@ A simple mixin mod that adds Arcmetica support directly into OptiFine. No more n
 
 Animated capes do not work.
 
-[Get capes from Cosmetica](https://cosmetica.cc)
+[Get capes from Cosmetica (log in using Microsoft)](https://login.cosmetica.cc)
 
 ### Development
 

@@ -2,7 +2,6 @@ package com.github.microcontrollersdev.mixmetica.command;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.event.ClickEvent;
 import net.minecraft.event.HoverEvent;
@@ -25,7 +24,7 @@ public class MixmeticaCommand extends CommandBase {
     public void processCommand(ICommandSender sender, String[] args) {
         Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(
                 EnumChatFormatting.GOLD + "[Mixmetica]" + EnumChatFormatting.WHITE +
-                        " Go to https://cosmetica.cc to set your cosmetics!").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://cosmetica.cc")));
+                        " Click here to go to https://login.cosmetica.cc to login into Cosmetica using Microsoft. Then you can set your cosmetics :)").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://login.cosmetica.cc")));
     }
 
     @Override
