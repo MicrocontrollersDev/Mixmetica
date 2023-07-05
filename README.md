@@ -5,7 +5,7 @@
 
 A simple one mixin mod that adds Arcmetica support directly into OptiFine. No more need for DNS rules*.
 
-###### *Currently only supports capes. Animated capes do not work.
+###### *Animated capes do not work.
 
 [Get capes from Cosmetica](https://cosmetica.cc)
 
