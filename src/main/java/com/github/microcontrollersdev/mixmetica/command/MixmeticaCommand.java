@@ -9,7 +9,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
 //#if MC>=11200
-import net.minecraft.server.MinecraftServer;
+//$$ import net.minecraft.server.MinecraftServer;
 //#endif
 
 public class MixmeticaCommand extends CommandBase {
