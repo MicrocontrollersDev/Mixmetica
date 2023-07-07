@@ -8,6 +8,9 @@ import net.minecraft.event.HoverEvent;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
+//#if MC>=11200
+import net.minecraft.server.MinecraftServer;
+//#endif
 
 public class MixmeticaCommand extends CommandBase {
     @Override
@@ -21,10 +24,13 @@ public class MixmeticaCommand extends CommandBase {
     }
 
     @Override
+    //#if MC<=11200
     public void processCommand(ICommandSender sender, String[] args) {
-        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(
-                EnumChatFormatting.GOLD + "[Mixmetica]" + EnumChatFormatting.WHITE +
-                        " Click here to go to https://login.cosmetica.cc to login into Cosmetica using Microsoft. Then you can set your cosmetics :)").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://login.cosmetica.cc")));
+    //#else
+    //$$ public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
+    //#endif
+        Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.GOLD + "[Mixmetica]" + EnumChatFormatting.WHITE +
+        " Click here to go to https://login.cosmetica.cc to login into Cosmetica using Microsoft. Then you can set your cosmetics :)").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://login.cosmetica.cc")));
     }
 
     @Override
