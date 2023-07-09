@@ -24,7 +24,7 @@ public class MixmeticaCommand extends CommandBase {
     }
 
     @Override
-    //#if MC<=11200
+    //#if MC<11200
     public void processCommand(ICommandSender sender, String[] args) {
     //#else
     //$$ public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
