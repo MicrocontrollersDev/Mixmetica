@@ -18,5 +18,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         name: Upload built mod JAR
         with:
-          name: mod-jar
-          path: build/libs/*.jar
+          name: mixmetica-artifacts
+          path: versions/**/build/libs/

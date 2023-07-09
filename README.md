@@ -12,7 +12,3 @@ A simple mixin mod that adds Arcmetica support directly into OptiFine. No more n
 Cosmetica Discord - https://discord.gg/aQh5SJEUBm
 
 My Discord - https://discord.gg/rejfv9kFJj
-
-### Development
-
-If you want to contribute, make sure to add OptiFine M6-pre2 to the libs folder when setting up a dev environment.
