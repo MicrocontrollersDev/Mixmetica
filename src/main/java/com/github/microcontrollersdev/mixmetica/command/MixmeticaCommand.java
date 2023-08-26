@@ -30,7 +30,7 @@ public class MixmeticaCommand extends CommandBase {
     //$$ public void execute(MinecraftServer server, ICommandSender sender, String[] args) {
     //#endif
         Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.GOLD + "[Mixmetica]" + EnumChatFormatting.WHITE +
-        " Click here to go to https://login.cosmetica.cc to login into Cosmetica using Microsoft. Then you can set your cosmetics :)").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://login.cosmetica.cc")));
+        " Click here to go to the Cosmetica login page using Microsoft. Then you can set your cosmetics :)").setChatStyle(createClickStyle(ClickEvent.Action.OPEN_URL, "https://login.cosmetica.cc/microsoft-java")));
     }
 
     @Override
