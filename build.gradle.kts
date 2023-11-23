@@ -47,9 +47,8 @@ loom {
     // Adds the tweak class if we are building legacy version of forge as per the documentation (https://docs.polyfrost.cc)
     if (project.platform.isLegacyForge) {
         launchConfigs.named("client") {
-            property("mixin.debug", "true")
-            property("asmhelper.verbose", "true")
-            arg("--tweakClass", "org.spongepowered.asm.launch.MixinTweaker")
+            // Loads OneConfig in dev env. Replace other tweak classes with this, but keep any other attributes!
+            arg("--tweakClass", "cc.polyfrost.oneconfig.loader.stage0.LaunchWrapperTweaker")
         }
     }
     // Configures the mixins if we are building for forge, useful for when we are dealing with cross-platform projects.
@@ -87,6 +86,9 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")
 
     runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.1.2")
+
+    compileOnly("cc.polyfrost:oneconfig-1.8.9-forge:0.2.0-alpha+") // Should not be included in jar
+    shade("cc.polyfrost:oneconfig-wrapper-launchwrapper:1.0.0-beta+") // Should be included in jar
 }
 
 tasks {
@@ -167,7 +169,8 @@ tasks {
                 "ModSide" to "CLIENT", // We aren't developing a server-side mod, so this is fine.
                 "ForceLoadAsMod" to true, // We want to load this jar as a mod, so we force Forge to do so.
                 "MixinConfigs" to "mixin.${mod_id}.json", // We want to use our mixin configuration, so we specify it here.
-                "TweakClass" to "org.spongepowered.asm.launch.MixinTweaker"
+                "TweakOrder" to 0,
+                "TweakClass" to "cc.polyfrost.oneconfig.loader.stage0.LaunchWrapperTweaker"
             )
         }
         dependsOn(shadowJar)

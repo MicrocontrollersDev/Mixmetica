@@ -5,13 +5,13 @@
     "description": "Mixins into OptiFine to use Arcmetica without needing DNS rules.",
     "version": "${version}",
     "mcversion": "1.8.9",
-    "url": "https://github.com/MicrocontrollersDev/Mixmetica",
+    "url": "https://modrinth.com/mod/mixmetica",
     "updateUrl": "",
     "authorList": [
       "Microcontrollers"
     ],
-    "credits": "",
-    "logoFile": "",
+    "credits": "Cosmetica Team",
+	"logoFile": "mixmetica.png",
     "screenshots": [],
     "dependencies": []
   }
