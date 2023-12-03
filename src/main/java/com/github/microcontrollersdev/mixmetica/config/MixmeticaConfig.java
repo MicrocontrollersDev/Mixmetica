@@ -24,7 +24,7 @@ public class MixmeticaConfig extends Config {
             type = InfoType.ERROR,
             size=2
     )
-    private boolean error = false;
+    private boolean animatedCapesError = false;
 
     @Info(
             text = "Cosmetica will ask you to sign into your Microsoft account to authenticate. Disabling cosmetics will require a game restart.",
@@ -32,14 +32,15 @@ public class MixmeticaConfig extends Config {
             type = InfoType.INFO,
             subcategory = "General"
     )
-    private boolean info = false;
+    private boolean loginAndDisableWarning = false;
 
     @Button(
             name = "Change Cosmetics",
             text = "Click!",
+            description = "This will take you to the Cosmetica website where you can log in and manage your cosmetics.",
             subcategory = "General"
     )
-    Runnable runnable = () -> {
+    Runnable openCosmetica = () -> {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("https://login.cosmetica.cc/microsoft-java"));
@@ -56,16 +57,16 @@ public class MixmeticaConfig extends Config {
     public static boolean disable = false;
 
     @Info(
-            text = "Only use a custom instance if you've set one up.",
+            text = "Only use a custom instance if you know what you are doing.",
             type = InfoType.WARNING,
             size=2,
-            subcategory = "General"
+            subcategory = "Instance"
     )
-    private boolean warning = false;
+    private boolean arcmeticaInstanceWarning = false;
 
     @Switch(
             name = "Use Custom Arcmetica Instance",
-            subcategory = "General"
+            subcategory = "Instance"
     )
     public static boolean customInstance = false;
 
@@ -73,7 +74,7 @@ public class MixmeticaConfig extends Config {
             name = "Arcmetica Instance",
             placeholder = "http://",
             secure = true,
-            subcategory = "General"
+            subcategory = "Instance"
     )
     public static String instanceLink = "";
 
@@ -82,7 +83,7 @@ public class MixmeticaConfig extends Config {
             text = "Click!",
             subcategory = "Socials"
     )
-    Runnable runnable2 = () -> {
+    Runnable cosmeticaDiscord = () -> {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("https://discord.gg/aQh5SJEUBm"));
@@ -97,7 +98,7 @@ public class MixmeticaConfig extends Config {
             text = "Click!",
             subcategory = "Socials"
     )
-    Runnable runnable3 = () -> {
+    Runnable cosmeticaKofi = () -> {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("https://ko-fi.com/cosmetica"));
@@ -112,7 +113,7 @@ public class MixmeticaConfig extends Config {
             text = "Click!",
             subcategory = "Socials"
     )
-    Runnable runnable4 = () -> {
+    Runnable mixmeticaDiscord = () -> {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("https://discord.gg/rejfv9kFJj"));
@@ -125,6 +126,6 @@ public class MixmeticaConfig extends Config {
     public MixmeticaConfig() {
         super(new Mod("Mixmetica", ModType.UTIL_QOL, "/mixmetica.png"), "mixmetica.json");
         initialize();
-        addDependency("profileLink", "customProfile");
+        addDependency("instanceLink", "customInstance");
     }
 }
