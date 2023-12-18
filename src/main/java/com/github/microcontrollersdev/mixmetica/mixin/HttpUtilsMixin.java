@@ -13,12 +13,12 @@ public abstract class HttpUtilsMixin {
     @Dynamic
     @ModifyConstant(method = "getPlayerItemsUrl", constant = @Constant(stringValue = "http://s.optifine.net", ordinal = 0))
     private static String modifyCapeUrl(String originalUrl) {
-        if (MixmeticaConfig.disable) return "http://s.optifine.net/capes/";
-        if (MixmeticaConfig.customInstance) {
+        if (MixmeticaConfig.disable) return "http://s.optifine.net";
+        else if (MixmeticaConfig.customInstance) {
             String link = MixmeticaConfig.instanceLink;
             if (link.endsWith("/")) link = link.substring(0, link.length() - 1);
             return link;
         }
-        return "http://23.95.137.175";
+        return "http://23.95.137.176";
     }
 }
