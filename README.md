@@ -8,6 +8,10 @@ Animated capes do not work. All cosmetic types supported.
 
 [Get cosmetics from Cosmetica (log in using Microsoft)](https://login.cosmetica.cc/microsoft-java)
 
+## Download
+
+Download from [Modrinth](https://modrinth.com/mod/mixmetica).
+
 ### Discords
 
 Cosmetica Discord - https://discord.gg/aQh5SJEUBm
