@@ -1,6 +1,6 @@
 # Mixmetica
 
-![OneConfig](https://github.com/MicrocontrollersDev/Mixmetica/assets/66657148/affc433d-1fc3-45c7-b544-0982b426793f)
+[![OneConfig](https://github.com/MicrocontrollersDev/Mixmetica/assets/66657148/affc433d-1fc3-45c7-b544-0982b426793f)](https://modrinth.com/mod/oneconfig)
 
 A simple mixin mod that adds Arcmetica support directly into OptiFine. No more need for DNS rules. 
 
