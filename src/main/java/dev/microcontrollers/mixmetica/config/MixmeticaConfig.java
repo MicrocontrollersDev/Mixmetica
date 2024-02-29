@@ -1,4 +1,4 @@
-package com.github.microcontrollersdev.mixmetica.config;
+package dev.microcontrollers.mixmetica.config;
 
 import cc.polyfrost.oneconfig.config.Config;
 import cc.polyfrost.oneconfig.config.annotations.*;
@@ -12,13 +12,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class MixmeticaConfig extends Config {
-    @Exclude
-    private static MixmeticaConfig INSTANCE = null;
-
-    public static MixmeticaConfig getInstance() {
-        return INSTANCE == null ? (INSTANCE = new MixmeticaConfig()) : INSTANCE;
-    }
-
     @Info(
             text = "Mixmetica does not support animated capes. Only the first frame of the cape will show.",
             type = InfoType.ERROR,
@@ -36,7 +29,7 @@ public class MixmeticaConfig extends Config {
 
     @Button(
             name = "Change Cosmetics",
-            text = "Click!",
+            text = "Click",
             description = "This will take you to the Cosmetica website where you can log in and manage your cosmetics.",
             subcategory = "General"
     )
@@ -80,7 +73,7 @@ public class MixmeticaConfig extends Config {
 
     @Button(
             name = "Join the Cosmetica Discord",
-            text = "Click!",
+            text = "Click",
             subcategory = "Socials"
     )
     Runnable cosmeticaDiscord = () -> {
@@ -95,7 +88,7 @@ public class MixmeticaConfig extends Config {
 
     @Button(
             name = "Donate to Cosmetica",
-            text = "Click!",
+            text = "Click",
             subcategory = "Socials"
     )
     Runnable cosmeticaKofi = () -> {
@@ -110,13 +103,28 @@ public class MixmeticaConfig extends Config {
 
     @Button(
             name = "Join the Mixmetica Discord",
-            text = "Click!",
+            text = "Click",
             subcategory = "Socials"
     )
     Runnable mixmeticaDiscord = () -> {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("https://discord.gg/rejfv9kFJj"));
+            } catch (IOException | URISyntaxException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    };
+
+    @Button(
+            name = "Check Out My Other Mods",
+            text = "Click",
+            subcategory = "Socials"
+    )
+    Runnable modrinthProfile = () -> {
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            try {
+                Desktop.getDesktop().browse(new URI("https://modrinth.com/user/Microcontrollers"));
             } catch (IOException | URISyntaxException e) {
                 throw new RuntimeException(e);
             }

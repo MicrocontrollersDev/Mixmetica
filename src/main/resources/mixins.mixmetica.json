@@ -1,5 +1,5 @@
 {
-  "package": "com.github.microcontrollersdev.mixmetica.mixin",
+  "package": "dev.microcontrollers.mixmetica.mixin",
   "refmap": "mixins.mixmetica.refmap.json",
   "minVersion": "0.7",
   "compatibilityLevel": "JAVA_8",

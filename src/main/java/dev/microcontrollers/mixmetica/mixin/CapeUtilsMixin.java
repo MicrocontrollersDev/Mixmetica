@@ -1,6 +1,6 @@
-package com.github.microcontrollersdev.mixmetica.mixin;
+package dev.microcontrollers.mixmetica.mixin;
 
-import com.github.microcontrollersdev.mixmetica.config.MixmeticaConfig;
+import dev.microcontrollers.mixmetica.config.MixmeticaConfig;
 import org.spongepowered.asm.mixin.Dynamic;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
