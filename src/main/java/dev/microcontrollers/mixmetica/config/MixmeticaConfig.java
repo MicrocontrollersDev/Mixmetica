@@ -44,7 +44,8 @@ public class MixmeticaConfig extends Config {
     };
 
     @Switch(
-            name = "Disable Cosmetics",
+            name = "Disable Cosmetica Cosmetics",
+            description = "This will revert back to using OptiFine cosmetics.",
             subcategory = "General"
     )
     public static boolean disable = false;
@@ -52,10 +53,32 @@ public class MixmeticaConfig extends Config {
     @Info(
             text = "Only use a custom instance if you know what you are doing.",
             type = InfoType.WARNING,
-            size=2,
+            size = 2,
             subcategory = "Instance"
     )
     private boolean arcmeticaInstanceWarning = false;
+
+    @Info(
+            text = "If Cosmetica servers are down, use the disable toggle above.",
+            type = InfoType.INFO,
+            subcategory = "Status"
+    )
+    public static boolean status = false;
+
+    @Button(
+            name = "Check Cosmetica Status",
+            text = "Click",
+            subcategory = "Status"
+    )
+    Runnable cosmeticaStatus = () -> {
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            try {
+                Desktop.getDesktop().browse(new URI("https://status.cosmetica.cc/"));
+            } catch (IOException | URISyntaxException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    };
 
     @Switch(
             name = "Use Custom Arcmetica Instance",
