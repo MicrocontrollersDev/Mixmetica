@@ -13,17 +13,17 @@ import java.net.URISyntaxException;
 
 public class MixmeticaConfig extends Config {
     @Info(
-            text = "Mixmetica does not support animated capes. Only the first frame of the cape will show.",
+            text = "Mixmetica does not currently support capes.",
             type = InfoType.ERROR,
-            size=2
+            size = 2
     )
     private boolean animatedCapesError = false;
 
     @Info(
             text = "Cosmetica will ask you to sign into your Microsoft account to authenticate. Disabling cosmetics will require a game restart.",
-            size = 2,
             type = InfoType.INFO,
-            subcategory = "General"
+            subcategory = "General",
+            size = 2
     )
     private boolean loginAndDisableWarning = false;
 
@@ -53,8 +53,8 @@ public class MixmeticaConfig extends Config {
     @Info(
             text = "Only use a custom instance if you know what you are doing.",
             type = InfoType.WARNING,
-            size = 2,
-            subcategory = "Instance"
+            subcategory = "Instance",
+            size = 2
     )
     private boolean arcmeticaInstanceWarning = false;
 
