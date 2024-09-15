@@ -1,3 +1,5 @@
+# Moved to https://codeberg.org/MicrocontrollersDev/Mixmetica
+
 # Mixmetica
 
 [![OneConfig](https://github.com/MicrocontrollersDev/Mixmetica/assets/66657148/affc433d-1fc3-45c7-b544-0982b426793f)](https://modrinth.com/mod/oneconfig)
